@@ -62,3 +62,6 @@ nav[4].innerText = siteContent["nav"]["nav-item-5"];
 nav[5].innerText = siteContent["nav"]["nav-item-6"];
 
 nav.forEach((item) => (item.style.color = "green"));
+
+let logoTwo = d.getElementById("cta-img");
+logoTwo.setAttribute("src", siteContent["cta"]["img-src"]);
