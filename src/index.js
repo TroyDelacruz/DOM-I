@@ -47,21 +47,31 @@ const siteContent = {
 
 console.log("project wired!");
 
-const d = document;
+// Selectors START
 
-let logo = d.getElementById("logo-img");
-logo.setAttribute("src", siteContent["nav"]["img-src"]);
+const logoImg = document.querySelector("#logo-img");
+const navigation = document.querySelectorAll("nav a");
+const ctaText = document.querySelector(".cta-text");
+const ctaImg = document.querySelector("#cta-img");
+const mainContent = document.querySelectorAll(".text-content");
+const contact = document.querySelector(".contact");
+const footer = document.querySelector("footer");
 
-let nav = d.querySelectorAll("a");
+// Selectors END
 
-nav[0].innerText = siteContent["nav"]["nav-item-1"];
-nav[1].innerText = siteContent["nav"]["nav-item-2"];
-nav[2].innerText = siteContent["nav"]["nav-item-3"];
-nav[3].innerText = siteContent["nav"]["nav-item-4"];
-nav[4].innerText = siteContent["nav"]["nav-item-5"];
-nav[5].innerText = siteContent["nav"]["nav-item-6"];
+// Logo IMG START
 
-nav.forEach((item) => (item.style.color = "green"));
+logoImg.setAttribute("src", siteContent["images"]["logo-img"]);
 
-let logoTwo = d.getElementById("cta-img");
-logoTwo.setAttribute("src", siteContent["cta"]["img-src"]);
+// Logo IMG END
+
+// Navigatiion START
+
+navigation[0].textContent = siteContent["nav"]["nav-item-1"];
+navigation[1].textContent = siteContent["nav"]["nav-item-2"];
+navigation[2].textContent = siteContent["nav"]["nav-item-3"];
+navigation[3].textContent = siteContent["nav"]["nav-item-4"];
+navigation[4].textContent = siteContent["nav"]["nav-item-5"];
+navigation[5].textContent = siteContent["nav"]["nav-item-6"];
+
+// Navigation END
