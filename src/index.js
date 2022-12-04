@@ -51,27 +51,33 @@ console.log("project wired!");
 
 const logoImg = document.querySelector("#logo-img");
 const navigation = document.querySelectorAll("nav a");
+const linkText = Object.values(siteContent.nav);
 const ctaText = document.querySelector(".cta-text");
 const ctaImg = document.querySelector("#cta-img");
+const accentImg = document.querySelector("#middle-img");
 const mainContent = document.querySelectorAll(".text-content");
 const contact = document.querySelector(".contact");
-const footer = document.querySelector("footer");
+const copyright = document.querySelector("footer");
 
 // Selectors END
 
-// Logo IMG START
+// Images START
 
-logoImg.setAttribute("src", siteContent["images"]["logo-img"]);
+logoImg.src = siteContent.images["logo-img"];
+ctaImg.src = siteContent.images["cta-img"];
+accentImg.src = siteContent.images["accent-img"];
 
-// Logo IMG END
+// Images END
 
-// Navigatiion START
+// Navigation START
 
-navigation[0].textContent = siteContent["nav"]["nav-item-1"];
-navigation[1].textContent = siteContent["nav"]["nav-item-2"];
-navigation[2].textContent = siteContent["nav"]["nav-item-3"];
-navigation[3].textContent = siteContent["nav"]["nav-item-4"];
-navigation[4].textContent = siteContent["nav"]["nav-item-5"];
-navigation[5].textContent = siteContent["nav"]["nav-item-6"];
+navigation.forEach((el, i) => {
+  el.textContent = linkText[i];
+  el.classList.add("italic");
+});
 
 // Navigation END
+
+// CTA Text START
+
+// CTA Text END
