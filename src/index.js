@@ -52,12 +52,16 @@ console.log("project wired!");
 const logoImg = document.querySelector("#logo-img");
 const navigation = document.querySelectorAll("nav a");
 const linkText = Object.values(siteContent.nav);
-const ctaText = document.querySelector(".cta-text");
+const ctaText = (document.querySelector(".cta .cta-text h1").textContent =
+  siteContent["cta"]["h1"]);
+const ctaButton = (document.querySelector(".cta .cta-text button").textContent =
+  siteContent["cta"]["button"]);
 const ctaImg = document.querySelector("#cta-img");
 const accentImg = document.querySelector("#middle-img");
-const mainContent = document.querySelectorAll(".text-content");
-const contact = document.querySelector(".contact");
-const copyright = document.querySelector("footer");
+const topContent = document.querySelector(".top-content");
+const bottomContent = document.querySelector(".bottom-content");
+const contact = document.querySelector("section.contact");
+const copyright = document.querySelector("footer a");
 
 // Selectors END
 
@@ -78,6 +82,48 @@ navigation.forEach((el, i) => {
 
 // Navigation END
 
-// CTA Text START
+// Footer START
 
-// CTA Text END
+copyright.textContent = siteContent["footer"]["copyright"];
+copyright.classList.add("bold");
+
+// Footer END
+
+// Contact START
+
+contact.children[0].textContent = siteContent["contact"]["contact-h4"];
+contact.children[1].textContent = siteContent["contact"]["address"];
+contact.children[2].textContent = siteContent["contact"]["email"];
+contact.children[3].textContent = siteContent["contact"]["phone"];
+
+// Contact END
+
+// Main Content START
+
+topContent.children[0].children[0].textContent =
+  siteContent["main-content"]["features-h4"];
+topContent.children[0].children[1].textContent =
+  siteContent["main-content"]["features-content"];
+topContent.children[1].children[0].textContent =
+  siteContent["main-content"]["about-h4"];
+topContent.children[1].children[1].textContent =
+  siteContent["main-content"]["about-content"];
+
+// Main Content END
+
+// Middle Content START
+
+bottomContent.children[0].children[0].textContent =
+  siteContent["main-content"]["services-h4"];
+bottomContent.children[0].children[1].textContent =
+  siteContent["main-content"]["services-content"];
+bottomContent.children[1].children[0].textContent =
+  siteContent["main-content"]["product-h4"];
+bottomContent.children[1].children[1].textContent =
+  siteContent["main-content"]["product-content"];
+bottomContent.children[2].children[0].textContent =
+  siteContent["main-content"]["vision-h4"];
+bottomContent.children[2].children[1].textContent =
+  siteContent["main-content"]["vision-content"];
+
+// Middle Content END
